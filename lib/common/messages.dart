@@ -18,7 +18,7 @@ class Messages extends Translations {
           "onboardingPageFourTitle": "Lot more features",
           "onboardingPageFourText": "Improve the quality of your health with us, good quality medication can enhance a good living ",
           "getStarted": "Get Started",
-          "skip": "Skip",
+          "authFooterText": "Already have an account? Login",
           "learnMore": "Learn More",
           "createAccount": "Create Account",
           "login": "Login",

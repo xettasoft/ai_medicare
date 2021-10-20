@@ -1,5 +1,7 @@
 import 'package:ai_medicare/bindings/login_binding.dart';
+import 'package:ai_medicare/bindings/register_binding.dart';
 import 'package:ai_medicare/views/auth_views/login.dart';
+import 'package:ai_medicare/views/auth_views/register.dart';
 import 'package:ai_medicare/views/onboarding/onboard_1.dart';
 import 'package:ai_medicare/views/onboarding/onboard_2.dart';
 import 'package:ai_medicare/views/onboarding/onboard_3.dart';
@@ -33,6 +35,11 @@ makeRoute() {
         name: '/login',
         page: () => const Login(),
         binding: LoginBinding(),
+      ),
+       GetPage(
+        name: '/register',
+        page: () => const Register(),
+        binding: RegisterBinding(),
       ),
   ];
 }
