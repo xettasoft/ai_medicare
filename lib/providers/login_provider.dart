@@ -1,4 +1,3 @@
-
 import 'package:ai_medicare/providers/base_provider.dart';
 import 'package:ai_medicare/providers/models/authModel/login_model.dart';
 import 'package:get/get.dart';

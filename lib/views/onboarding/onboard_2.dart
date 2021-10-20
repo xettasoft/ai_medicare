@@ -1,10 +1,9 @@
-import 'package:ai_medicare/controllers/login_controller.dart';
 import 'package:ai_medicare/views/onboarding/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class OnboardingTwo extends GetView<LoginController> {
+class OnboardingTwo extends StatelessWidget {
   const OnboardingTwo({Key? key}) : super(key: key);
 
   @override
@@ -45,14 +44,13 @@ class OnboardingTwo extends GetView<LoginController> {
         ],
       ),
       floatingActionButton: GestureDetector(
-        onTap: () {
-          Get.toNamed('/onboarding-three');
-        },
-        child: SvgPicture.asset(
-                    'assets/images/svg/onboard-bt-2.svg',
-                    width: width * 0.15,
-                  )
-      ),
+          onTap: () {
+            Get.toNamed('/onboarding-three');
+          },
+          child: SvgPicture.asset(
+            'assets/images/svg/onboard-bt-2.svg',
+            width: width * 0.15,
+          )),
     );
   }
 }

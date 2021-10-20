@@ -1,9 +1,9 @@
-import 'package:ai_medicare/common/colors.dart';
-import 'package:ai_medicare/common/font_family.dart';
 import 'package:ai_medicare/controllers/login_controller.dart';
+import 'package:ai_medicare/views/auth_views/auth_component/footer.dart';
+import 'package:ai_medicare/views/auth_views/auth_component/login_button.dart';
+import 'package:ai_medicare/views/auth_views/auth_component/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 
 class Login extends GetView<LoginController> {
   const Login({Key? key}) : super(key: key);
@@ -14,19 +14,43 @@ class Login extends GetView<LoginController> {
     double width = Get.width;
     double height = Get.height;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sign In",
-            style: TextStyle(
-              color: AppColors.appPrimaryColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              fontFamily: FontFamily.HKGroteskSemiBold,
-            )),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        centerTitle: true,
+        body: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        children: [
+          //Expanded(child: Text("1")),
+          Expanded(
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "hey".tr,
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    "welcome".tr,
+                    style: const TextStyle(
+                        fontSize: 40, fontWeight: FontWeight.bold),
+                  ),
+                  LoginForm()
+                ],
+              ),
+            ),
+          ),
+          const Expanded(
+            flex: 0,
+            child: LoginButton(),
+          ),
+          const Expanded(
+            flex: 0,
+            child: AuthFooter(
+              isLogin: false,
+            ),
+          ),
+        ],
       ),
-      body: Text("Login")
-    );
+    ));
   }
 }

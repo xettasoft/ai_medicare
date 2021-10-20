@@ -1,4 +1,3 @@
-
 import 'package:ai_medicare/providers/register_provider.dart';
 import 'package:get/get.dart';
 

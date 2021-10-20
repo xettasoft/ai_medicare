@@ -6,7 +6,7 @@ class AssetImageWidget extends StatelessWidget {
   final String assetName;
   final double width;
   @override
-  Widget build(BuildContext context) =>
-      width == 0 ? Image.asset('assets/images/$assetName')
-      :Image.asset('assets/images/$assetName', width: width);
+  Widget build(BuildContext context) => width == 0
+      ? Image.asset('assets/images/$assetName')
+      : Image.asset('assets/images/$assetName', width: width);
 }

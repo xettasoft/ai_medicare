@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:ai_medicare/common/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class SharedPreferenceHelper {
   // shared pref instance
   final Future<SharedPreferences> _sharedPreference;

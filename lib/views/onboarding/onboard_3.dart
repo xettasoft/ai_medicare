@@ -1,10 +1,9 @@
-import 'package:ai_medicare/controllers/login_controller.dart';
 import 'package:ai_medicare/views/onboarding/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class OnboardingThree extends GetView<LoginController> {
+class OnboardingThree extends StatelessWidget {
   const OnboardingThree({Key? key}) : super(key: key);
 
   @override
@@ -16,8 +15,7 @@ class OnboardingThree extends GetView<LoginController> {
         children: [
           Expanded(
             flex: 2,
-            child:   
-            Stack(
+            child: Stack(
               //fit: StackFit.expand,
               children: [
                 SvgPicture.asset(
@@ -37,7 +35,8 @@ class OnboardingThree extends GetView<LoginController> {
           Expanded(
             flex: 1,
             child: Padding(
-              padding: EdgeInsets.only(top: height * 0.000005, left: width * 0.05),
+              padding:
+                  EdgeInsets.only(top: height * 0.000005, left: width * 0.05),
               child: const OnboardingTextWidget(
                 header: "onboardingPageThreeTitle",
                 text: "onboardingPageThreeText",
@@ -47,14 +46,13 @@ class OnboardingThree extends GetView<LoginController> {
         ],
       ),
       floatingActionButton: GestureDetector(
-        onTap: () {
-          Get.toNamed('/onboarding-four');
-        },
-        child: SvgPicture.asset(
-                    'assets/images/svg/onboard-bt-3.svg',
-                    width: width * 0.15,
-                  )
-      ),
+          onTap: () {
+            Get.toNamed('/onboarding-four');
+          },
+          child: SvgPicture.asset(
+            'assets/images/svg/onboard-bt-3.svg',
+            width: width * 0.15,
+          )),
     );
   }
 }

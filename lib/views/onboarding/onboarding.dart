@@ -1,10 +1,9 @@
 import 'package:ai_medicare/common/colors.dart';
-import 'package:ai_medicare/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class Onboarding extends GetView<LoginController> {
+class Onboarding extends StatelessWidget {
   const Onboarding({Key? key}) : super(key: key);
 
   @override
@@ -59,23 +58,25 @@ class Onboarding extends GetView<LoginController> {
                   Expanded(
                     flex: 0,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 30),
-                      child: ElevatedButton(
-                      onPressed: () {
-                         Get.toNamed('/onboarding-one');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: AppColors.appPrimaryColor,
-                        
-                        shape: const StadiumBorder()
-                      ),
-                      child:  Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 20),
-                          child: Text("getStarted".tr, style: const TextStyle(fontSize: 18),),
-                        ),),
-                    )
-                    ),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 50, horizontal: 30),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.toNamed('/onboarding-one');
+                          },
+                          style: ElevatedButton.styleFrom(
+                              primary: AppColors.appPrimaryColor,
+                              shape: const StadiumBorder()),
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 20),
+                              child: Text(
+                                "getStarted".tr,
+                                style: const TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ),
+                        )),
                   ),
                 ],
               )),

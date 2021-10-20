@@ -1,11 +1,9 @@
-import 'package:ai_medicare/common/colors.dart';
-import 'package:ai_medicare/common/font_family.dart';
-import 'package:ai_medicare/controllers/login_controller.dart';
+import 'package:ai_medicare/controllers/register_controller.dart';
+import 'package:ai_medicare/views/auth_views/auth_component/register_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
-class Register extends GetView<LoginController> {
+class Register extends GetView<RegisterController> {
   const Register({Key? key}) : super(key: key);
 
   @override
@@ -14,19 +12,20 @@ class Register extends GetView<LoginController> {
     double width = Get.width;
     double height = Get.height;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sign In",
-            style: TextStyle(
-              color: AppColors.appPrimaryColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              fontFamily: FontFamily.HKGroteskSemiBold,
-            )),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        centerTitle: true,
+        body: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        children: [
+          Expanded(
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: width * 0.08),
+                child: const RegisterTab(),
+              ),
+            ),
+          ),
+        ],
       ),
-      body: Text("Login")
-    );
+    ));
   }
 }

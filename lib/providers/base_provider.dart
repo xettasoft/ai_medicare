@@ -1,10 +1,8 @@
-
 import 'package:ai_medicare/common/provider.dart';
 import 'package:ai_medicare/providers/shared_preference_helper.dart';
 import 'package:get/get_connect.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 class BaseProvider extends GetConnect {
   @override
