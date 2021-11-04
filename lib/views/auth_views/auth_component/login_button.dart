@@ -14,7 +14,9 @@ class LoginButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           primary: AppColors.appPrimaryColor, shape: const StadiumBorder()),
-      onPressed: () {},
+      onPressed: () {
+        Get.toNamed("/welcome");
+      },
       child: Center(
         child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),

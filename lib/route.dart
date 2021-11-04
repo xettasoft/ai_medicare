@@ -1,3 +1,4 @@
+import 'package:ai_medicare/bindings/home_binding.dart';
 import 'package:ai_medicare/bindings/login_binding.dart';
 import 'package:ai_medicare/bindings/register_binding.dart';
 import 'package:ai_medicare/views/auth_views/complete_register.dart';
@@ -5,6 +6,7 @@ import 'package:ai_medicare/views/auth_views/final_step.dart';
 import 'package:ai_medicare/views/auth_views/login.dart';
 import 'package:ai_medicare/views/auth_views/register.dart';
 import 'package:ai_medicare/views/auth_views/welcome.dart';
+import 'package:ai_medicare/views/dashboard/home.dart';
 import 'package:ai_medicare/views/onboarding/onboard_1.dart';
 import 'package:ai_medicare/views/onboarding/onboard_2.dart';
 import 'package:ai_medicare/views/onboarding/onboard_3.dart';
@@ -55,6 +57,11 @@ makeRoute() {
     GetPage(
       name: '/welcome',
       page: () => const Welcome(),
+    ),
+    GetPage(
+      name: '/home',
+      page: () => const Home(),
+      binding: HomeBinding(),
     ),
   ];
 }

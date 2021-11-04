@@ -88,7 +88,9 @@ class LoginForm extends GetView<LoginController> {
             height: height * 0.02,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed("/welcome");
+            },
             child: Text(
               "forgotPassword".tr,
               style: TextStyle(

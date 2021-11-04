@@ -1,3 +1,4 @@
+import 'package:ai_medicare/common/app_theme.dart';
 import 'package:ai_medicare/common/messages.dart';
 import 'package:ai_medicare/route.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ void main() {
     title: "appName".tr,
     debugShowCheckedModeBanner: false,
     themeMode: ThemeMode.light,
+    darkTheme: AppTheme.darkTheme,
+    theme: AppTheme.lightTheme,
     initialRoute: '/',
     getPages: makeRoute(),
   ));

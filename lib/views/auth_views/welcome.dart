@@ -60,7 +60,7 @@ class Welcome extends StatelessWidget {
                       primary: AppColors.appPrimaryColor,
                       shape: const StadiumBorder()),
                   onPressed: () {
-                    Get.toNamed('/');
+                    Get.toNamed('/home');
                   },
                   child: Center(
                     child: Padding(
