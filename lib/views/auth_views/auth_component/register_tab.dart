@@ -11,7 +11,7 @@ class RegisterTab extends StatelessWidget {
     double width = Get.width;
     double height = Get.height;
     return Scaffold(
-      backgroundColor: AppColors.Color8,
+      backgroundColor: AppColors.Color1,
       body: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,

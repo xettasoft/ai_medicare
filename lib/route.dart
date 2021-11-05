@@ -6,12 +6,20 @@ import 'package:ai_medicare/views/auth_views/final_step.dart';
 import 'package:ai_medicare/views/auth_views/login.dart';
 import 'package:ai_medicare/views/auth_views/register.dart';
 import 'package:ai_medicare/views/auth_views/welcome.dart';
-import 'package:ai_medicare/views/dashboard/home.dart';
+import 'package:ai_medicare/views/dashboard/navigator.dart';
+import 'package:ai_medicare/views/doctor/doctor_profile.dart';
+import 'package:ai_medicare/views/doctor/my_doctors.dart';
+import 'package:ai_medicare/views/medications/medications.dart';
+import 'package:ai_medicare/views/notification/notification.dart';
 import 'package:ai_medicare/views/onboarding/onboard_1.dart';
 import 'package:ai_medicare/views/onboarding/onboard_2.dart';
 import 'package:ai_medicare/views/onboarding/onboard_3.dart';
 import 'package:ai_medicare/views/onboarding/onboard_4.dart';
 import 'package:ai_medicare/views/onboarding/onboarding.dart';
+import 'package:ai_medicare/views/pharmacy/pharmacy.dart';
+import 'package:ai_medicare/views/profile/my_profile.dart';
+import 'package:ai_medicare/views/symptom_checker/symptom_checker.dart';
+import 'package:ai_medicare/views/vitals/vitals.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 makeRoute() {
@@ -59,8 +67,40 @@ makeRoute() {
       page: () => const Welcome(),
     ),
     GetPage(
+      name: '/notifications',
+      page: () => Notifications(),
+    ),
+    GetPage(
+      name: '/symptomCheck',
+      page: () => SymptomCheck(),
+    ),
+    GetPage(
+      name: '/doctorProfile',
+      page: () => DoctorProfile(),
+    ),
+    GetPage(
+      name: '/myProfile',
+      page: () => const MyProfile(),
+    ),
+    GetPage(
+      name: '/vitals',
+      page: () => const Vitals(),
+    ),
+    GetPage(
+      name: '/medications',
+      page: () => Medications(),
+    ),
+    GetPage(
+      name: '/myDoctors',
+      page: () => const MyDoctors(),
+    ),
+    GetPage(
+      name: '/pharmacy',
+      page: () => Pharmacy(),
+    ),
+    GetPage(
       name: '/home',
-      page: () => const Home(),
+      page: () => Navigator(),
       binding: HomeBinding(),
     ),
   ];

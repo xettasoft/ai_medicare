@@ -72,7 +72,9 @@ class DrawerScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 10),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/myProfile");
+                      },
                       leading: const Icon(Icons.person_rounded),
                       title: Text(
                         "Profile",
@@ -85,7 +87,9 @@ class DrawerScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 10),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/medications");
+                      },
                       leading: const Icon(Icons.file_copy),
                       title: Text(
                         "Medications",
