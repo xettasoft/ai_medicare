@@ -17,12 +17,14 @@ class BasicParameter extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
-        const Text(
-          "Basic Parameter",
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-        ),
+        const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              "Basic Parameter",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            )),
         Container(
-          margin: const EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           width: width,
           decoration: const BoxDecoration(
             color: AppColors.Color2,

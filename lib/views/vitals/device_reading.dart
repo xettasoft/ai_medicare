@@ -19,9 +19,7 @@ class DeviceReading extends StatelessWidget {
       children: [
         Flexible(
             child: Container(
-          margin: EdgeInsets.only(
-            top: 25,
-          ),
+          margin: const EdgeInsets.only(top: 25, left: 20, right: 10),
           width: width,
           height: height * .4,
           decoration: BoxDecoration(
@@ -110,7 +108,7 @@ class DeviceReading extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20, right: 20),
               //width: width,
               height: height * .2,
               decoration: BoxDecoration(
@@ -174,7 +172,7 @@ class DeviceReading extends StatelessWidget {
               ),
             ),
             Container(
-                margin: const EdgeInsets.only(top: 5),
+                margin: const EdgeInsets.only(top: 5, right: 20),
                 width: width,
                 height: height * .2,
                 decoration: BoxDecoration(

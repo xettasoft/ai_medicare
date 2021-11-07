@@ -14,7 +14,7 @@ class ProfileCard extends StatelessWidget {
     double height = Get.height;
 
     return Container(
-      margin: const EdgeInsets.only(top: 50),
+      margin: const EdgeInsets.only(top: 50, left: 15, right: 15),
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       width: width,
       decoration: BoxDecoration(

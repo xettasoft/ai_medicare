@@ -14,7 +14,7 @@ class LatestFeedCard extends StatelessWidget {
     return Row(
       children: [
         Container(
-            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            margin: const EdgeInsets.only(top: 10, right: 10),
             //padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
             width: width,
             decoration: BoxDecoration(
@@ -24,7 +24,7 @@ class LatestFeedCard extends StatelessWidget {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.grey.withOpacity(0.1),
                     spreadRadius: 5,
                     blurRadius: 7,
                     offset: const Offset(0, 3), // changes position of shadow
@@ -42,7 +42,7 @@ class LatestFeedCard extends StatelessWidget {
                   width: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

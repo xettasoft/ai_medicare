@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DeviceStatus extends StatelessWidget {
-  const DeviceStatus({Key? key}) : super(key: key);
+  const DeviceStatus({Key? key, this.action}) : super(key: key);
+
+  final Function? action;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class DeviceStatus extends StatelessWidget {
     double height = Get.height;
 
     return Container(
-      margin: const EdgeInsets.only(top: 25),
+      margin: const EdgeInsets.only(top: 25, left: 15, right: 15),
       width: width,
       padding: const EdgeInsets.symmetric(vertical: 0),
       decoration: const BoxDecoration(
@@ -31,7 +33,8 @@ class DeviceStatus extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Get.toNamed("/symptomCheck");
+                action!();
+                //Get.toNamed("/symptomCheck");
               },
               child: const Text("Set Up "),
               style: ElevatedButton.styleFrom(

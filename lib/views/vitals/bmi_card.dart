@@ -4,15 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BMICard extends StatelessWidget {
-  const BMICard({Key? key, this.isVital = false}) : super(key: key);
+  const BMICard(
+      {Key? key, this.isVital = false, this.padding = 20, this.paddingTop = 25})
+      : super(key: key);
   final bool? isVital;
+  final double? padding;
+  final double? paddingTop;
   @override
   Widget build(BuildContext context) {
     double width = Get.width;
     double height = Get.height;
 
     return Container(
-      margin: const EdgeInsets.only(top: 25),
+      margin:
+          EdgeInsets.only(top: paddingTop!, left: padding!, right: padding!),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       width: width,
       height: height * 0.2,

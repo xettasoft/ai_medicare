@@ -68,7 +68,7 @@ class MyProfile extends StatelessWidget {
         title: const Text("Profile"),
       ),
       body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
           child: ListView(
             children: [
               Column(

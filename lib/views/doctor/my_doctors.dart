@@ -40,6 +40,7 @@ class MyDoctors extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return DoctorSearchCard(
                       doctor: data[index],
+                      canMessage: true,
                     );
                   },
                 ),

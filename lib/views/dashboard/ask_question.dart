@@ -11,7 +11,7 @@ class AskQuestion extends StatelessWidget {
     double height = Get.height;
 
     return Container(
-      margin: const EdgeInsets.only(top: 25),
+      margin: const EdgeInsets.only(top: 25, bottom: 50, right: 15, left: 15),
       width: width,
       padding: const EdgeInsets.symmetric(vertical: 0),
       decoration: const BoxDecoration(

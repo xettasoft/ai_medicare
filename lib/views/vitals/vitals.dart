@@ -21,10 +21,12 @@ class Vitals extends StatelessWidget {
           title: const Text("Vitals"),
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+          padding: const EdgeInsets.only(left: 0, right: 0, bottom: 30),
           child: ListView(
             children: const [
-              BMICard(),
+              BMICard(
+                paddingTop: 5,
+              ),
               SymptomChecker(),
               BasicParameter(),
               DeviceReading(),

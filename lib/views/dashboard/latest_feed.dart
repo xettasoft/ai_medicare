@@ -16,12 +16,15 @@ class LatestFeed extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
-        const Text(
-          "Latest Feed",
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-        ),
+        const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              "Latest Feed",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            )),
         Container(
-          margin: const EdgeInsets.only(top: 10, bottom: 30),
+          margin:
+              const EdgeInsets.only(top: 10, bottom: 30, left: 15, right: 15),
           width: width,
           height: height * 0.2,
           decoration: const BoxDecoration(

@@ -5,9 +5,11 @@ import 'package:ai_medicare/views/dashboard/menu.dart';
 import 'package:ai_medicare/views/dashboard/name_header.dart';
 import 'package:ai_medicare/views/dashboard/symptom_status.dart';
 import 'package:ai_medicare/views/device/device_status.dart';
+import 'package:ai_medicare/views/device/setup_card.dart';
 import 'package:ai_medicare/views/vitals/bmi_card.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 
 class Home extends GetView<HomeController> {
@@ -49,20 +51,46 @@ class Home extends GetView<HomeController> {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+          padding: const EdgeInsets.only(left: 0, right: 0, bottom: 0),
           child: ListView(
             children: [
+              Obx(() {
+                if (controller.isDeviceSetupNotifier.isFalse) {
+                  SchedulerBinding.instance
+                      ?.addPostFrameCallback((_) => _deviceSetup(context));
+                }
+                controller.isDeviceSetupNotified();
+                return const SizedBox.shrink();
+              }),
               const NameHeader(),
               const BMICard(
                 isVital: true,
+                padding: 15,
               ),
               const SymptomCheckerStatus(),
-              const DeviceStatus(),
+              DeviceStatus(action: () {
+                controller.isDeviceSetupNotified(state: false);
+              }),
               Menu(),
               const LatestFeed(),
               const AskQuestion(),
             ],
           ),
         ));
+  }
+
+  void _deviceSetup(BuildContext context) {
+    showModalBottomSheet(
+        backgroundColor: Colors.black.withOpacity(0.3),
+        context: context,
+        isScrollControlled: true,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+        builder: (BuildContext bc) {
+          return const Center(
+            child: SetupCard(),
+          );
+        });
   }
 }

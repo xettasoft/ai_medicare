@@ -1,19 +1,13 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/symptom_checker_controller.dart';
+import 'package:ai_medicare/views/symptom_checker/check_now.dart';
+import 'package:ai_medicare/views/symptom_checker/last_checked.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SymptomCheck extends StatelessWidget {
+class SymptomCheck extends GetView<SymptomCheckerController> {
   SymptomCheck({Key? key}) : super(key: key);
 
-  final List<String> data = [
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-  ];
   @override
   Widget build(BuildContext context) {
     double width = Get.width;
@@ -26,32 +20,64 @@ class SymptomCheck extends StatelessWidget {
         title: const Text("Symptom Checker"),
       ),
       body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (context, index) {
-              return Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(20),
-                    ),
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            DefaultTabController(
+                length: 2,
+                initialIndex: 0,
+                child: Expanded(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 0,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Material(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              color: Colors.grey.shade200,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: TabBar(
+                                    unselectedLabelColor: Colors.grey.shade500,
+                                    indicator: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: AppColors.appPrimaryColor),
+                                    tabs: const [
+                                      Tab(
+                                          child: Text(
+                                        'Last Checked',
+                                        style: TextStyle(
+                                            // color: AppColors.Color9,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 12),
+                                      )),
+                                      Tab(
+                                          child: Text(
+                                        'Check Now',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      )),
+                                    ]),
+                              )),
+                        ),
+                      ),
+                      Expanded(
+                        child: TabBarView(
+                          children: [LastChecked(), CheckNow()],
+                        ),
+                      ),
+                    ],
                   ),
-                  child: ListTile(
-                    title: Text(data[index]),
-                    trailing: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.arrow_forward_ios_outlined,
-                          color: AppColors.appPrimaryColor,
-                        )),
-                  ));
-            },
-          )),
+                )),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -11,7 +11,7 @@ class SymptomChecker extends StatelessWidget {
     double height = Get.height;
 
     return Container(
-      margin: const EdgeInsets.only(top: 25),
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       width: width,
       padding: const EdgeInsets.symmetric(vertical: 0),
       decoration: const BoxDecoration(

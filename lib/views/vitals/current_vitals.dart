@@ -13,7 +13,7 @@ class CurrentVitals extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 50),
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           width: width,
           decoration: const BoxDecoration(
             color: AppColors.Color2,
@@ -107,7 +107,7 @@ class CurrentVitals extends StatelessWidget {
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(top: 20, bottom: 50),
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           width: width,
           decoration: const BoxDecoration(
             color: AppColors.Color2,

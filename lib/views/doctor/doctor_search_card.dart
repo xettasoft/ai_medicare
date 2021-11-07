@@ -4,8 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class DoctorSearchCard extends StatelessWidget {
-  const DoctorSearchCard({Key? key, this.doctor}) : super(key: key);
+  const DoctorSearchCard({Key? key, this.doctor, this.canMessage = false})
+      : super(key: key);
   final String? doctor;
+  final bool? canMessage;
   @override
   Widget build(BuildContext context) {
     double width = Get.width;
@@ -42,21 +44,31 @@ class DoctorSearchCard extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           subtitle: Row(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text("psychiatrist"),
               Row(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 5),
                     child: Text("4.5"),
                   ),
                   SvgPicture.asset(
                     'assets/images/svg/star-icon.svg',
                     width: width * 0.05,
-                  )
+                  ),
                 ],
-              )
+              ),
+              canMessage!
+                  ? GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.chat,
+                        color: AppColors.appPrimaryColor,
+                      ),
+                    )
+                  : Container(),
             ],
           ),
           trailing: IconButton(

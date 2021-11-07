@@ -1,12 +1,15 @@
 import 'package:ai_medicare/bindings/home_binding.dart';
 import 'package:ai_medicare/bindings/login_binding.dart';
 import 'package:ai_medicare/bindings/register_binding.dart';
+import 'package:ai_medicare/bindings/setup_binding.dart';
+import 'package:ai_medicare/bindings/symptom_checker_binding.dart';
 import 'package:ai_medicare/views/auth_views/complete_register.dart';
 import 'package:ai_medicare/views/auth_views/final_step.dart';
 import 'package:ai_medicare/views/auth_views/login.dart';
 import 'package:ai_medicare/views/auth_views/register.dart';
 import 'package:ai_medicare/views/auth_views/welcome.dart';
 import 'package:ai_medicare/views/dashboard/navigator.dart';
+import 'package:ai_medicare/views/device/setup.dart';
 import 'package:ai_medicare/views/doctor/doctor_profile.dart';
 import 'package:ai_medicare/views/doctor/my_doctors.dart';
 import 'package:ai_medicare/views/medications/medications.dart';
@@ -71,9 +74,9 @@ makeRoute() {
       page: () => Notifications(),
     ),
     GetPage(
-      name: '/symptomCheck',
-      page: () => SymptomCheck(),
-    ),
+        name: '/symptomCheck',
+        page: () => SymptomCheck(),
+        binding: SymptomCheckerBinding()),
     GetPage(
       name: '/doctorProfile',
       page: () => DoctorProfile(),
@@ -98,6 +101,10 @@ makeRoute() {
       name: '/pharmacy',
       page: () => Pharmacy(),
     ),
+    GetPage(
+        name: '/setup',
+        page: () => const SetupDevice(),
+        binding: SetupBinding()),
     GetPage(
       name: '/home',
       page: () => Navigator(),

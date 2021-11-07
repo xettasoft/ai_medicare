@@ -17,7 +17,7 @@ class MenuCard extends StatelessWidget {
           Get.toNamed("${menu!["route"]}");
         },
         child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            margin: const EdgeInsets.only(top: 10, right: 10),
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
             decoration: BoxDecoration(
                 color: menu!["primary"] == "yes"

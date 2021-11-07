@@ -48,7 +48,8 @@ class Menu extends StatelessWidget {
     double width = Get.width;
     double height = Get.height;
 
-    return Padding(
+    return Container(
+        margin: EdgeInsets.only(left: 15, right: 5),
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: GridView(
             physics: const NeverScrollableScrollPhysics(),
