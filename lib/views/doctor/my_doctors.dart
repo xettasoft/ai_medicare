@@ -1,4 +1,5 @@
 import 'package:ai_medicare/views/doctor/doctor_search_card.dart';
+import 'package:ai_medicare/views/search/search_chip.dart';
 import 'package:ai_medicare/views/search/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -30,9 +31,10 @@ class MyDoctors extends StatelessWidget {
                 flex: 0,
                 child: SearchField(),
               ),
-              const Expanded(
+              Expanded(
                 flex: 0,
-                child: Text("chip"),
+                child: SizedBox(
+                    height: 50, width: width, child: const SearchChip()),
               ),
               Expanded(
                 child: ListView.builder(

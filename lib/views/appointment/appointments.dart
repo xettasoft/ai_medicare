@@ -1,9 +1,12 @@
+import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/views/dashboard/drawer_screen.dart';
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MyAppointments extends StatelessWidget {
-  const MyAppointments({Key? key}) : super(key: key);
+  const MyAppointments({Key? key, this.drawer}) : super(key: key);
+  final Function? drawer;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +31,25 @@ class MyAppointments extends StatelessWidget {
                     Icons.menu,
                     color: Colors.grey,
                   ),
-                  onPressed: () => Scaffold.of(context).openDrawer()),
+                  onPressed: () => drawer!()),
         ),
+        actions: [
+          Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: IconButton(
+                  onPressed: () {
+                    Get.toNamed("/notifications");
+                  },
+                  icon: Badge(
+                      badgeContent: const Text(
+                        "1",
+                        style: TextStyle(color: AppColors.whiteColor),
+                      ),
+                      child: Icon(
+                        Icons.notifications_none,
+                        color: Colors.grey.shade500,
+                      ))))
+        ],
       ),
       body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),

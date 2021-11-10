@@ -14,7 +14,11 @@ class Navigator extends StatelessWidget {
   final PersistentTabController _controller = PersistentTabController();
 
   List<Widget> _buildScreens(Function drawer) {
-    return [Home(drawer: drawer), Search(), const MyAppointments()];
+    return [
+      Home(drawer: drawer),
+      Search(drawer: drawer),
+      MyAppointments(drawer: drawer)
+    ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -31,7 +35,7 @@ class Navigator extends StatelessWidget {
           color: Colors.white,
         ),
         title: ("Search"),
-        activeColorPrimary: AppColors.appPrimaryColor,
+        activeColorPrimary: AppColors.Color5,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(

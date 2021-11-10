@@ -1,11 +1,14 @@
-import 'package:ai_medicare/views/dashboard/drawer_screen.dart';
+import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/views/doctor/doctor_search_card.dart';
+import 'package:ai_medicare/views/search/search_chip.dart';
 import 'package:ai_medicare/views/search/search_field.dart';
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Search extends StatelessWidget {
-  Search({Key? key}) : super(key: key);
+  const Search({Key? key, this.drawer}) : super(key: key);
+  final Function? drawer;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,6 @@ class Search extends StatelessWidget {
     ];
 
     return Scaffold(
-      drawer: DrawerScreen(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -34,8 +36,25 @@ class Search extends StatelessWidget {
                     Icons.menu,
                     color: Colors.grey,
                   ),
-                  onPressed: () => Scaffold.of(context).openDrawer()),
+                  onPressed: () => drawer!()),
         ),
+        actions: [
+          Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: IconButton(
+                  onPressed: () {
+                    Get.toNamed("/notifications");
+                  },
+                  icon: Badge(
+                      badgeContent: const Text(
+                        "1",
+                        style: TextStyle(color: AppColors.whiteColor),
+                      ),
+                      child: Icon(
+                        Icons.notifications_none,
+                        color: Colors.grey.shade500,
+                      ))))
+        ],
       ),
       body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -45,9 +64,10 @@ class Search extends StatelessWidget {
                 flex: 0,
                 child: SearchField(),
               ),
-              const Expanded(
+              Expanded(
                 flex: 0,
-                child: Text("chip"),
+                child: SizedBox(
+                    height: 50, width: width, child: const SearchChip()),
               ),
               Expanded(
                 child: ListView.builder(

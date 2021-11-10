@@ -1,3 +1,4 @@
+import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/home_controller.dart';
 import 'package:ai_medicare/views/dashboard/ask_question.dart';
 import 'package:ai_medicare/views/dashboard/latest_feed.dart';
@@ -43,7 +44,10 @@ class Home extends GetView<HomeController> {
                       Get.toNamed("/notifications");
                     },
                     icon: Badge(
-                        badgeContent: const Text("1"),
+                        badgeContent: const Text(
+                          "1",
+                          style: TextStyle(color: AppColors.whiteColor),
+                        ),
                         child: Icon(
                           Icons.notifications_none,
                           color: Colors.grey.shade500,

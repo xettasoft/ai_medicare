@@ -1,19 +1,12 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/medication_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 
-class Medications extends StatelessWidget {
-  Medications({Key? key}) : super(key: key);
+class Medications extends GetView<MedicationController> {
+  const Medications({Key? key}) : super(key: key);
 
-  final List<String> data = [
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-    "Tuesday, Jul 20  10:21 AM",
-  ];
   @override
   Widget build(BuildContext context) {
     double width = Get.width;
@@ -27,31 +20,50 @@ class Medications extends StatelessWidget {
       ),
       body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
-          child: ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (context, index) {
-              return Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                  ),
-                  child: ListTile(
-                    title: Text(data[index]),
-                    trailing: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.arrow_forward_ios_outlined,
-                          color: AppColors.appPrimaryColor,
-                        )),
-                  ));
-            },
-          )),
+          child: Obx(() => LazyLoadScrollView(
+              onEndOfPage: controller.loadNextPage,
+              isLoading: controller.lastPage,
+              child: Column(
+                children: [
+                  Expanded(
+                      child: ListView.builder(
+                    itemCount: controller.medications.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade100,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                          child: ListTile(
+                            onTap: () {
+                              Get.toNamed('/medication');
+                            },
+                            title: Text(controller.medications[index]),
+                            subtitle: const Text(
+                                "31st October 2022     3:55AM31st October 2022     3:55AM"),
+                            trailing: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.arrow_forward_ios_outlined,
+                                  color: AppColors.appPrimaryColor,
+                                )),
+                          ));
+                    },
+                  )),
+                  controller.loading
+                      ? const Expanded(
+                          flex: 0,
+                          child: Text("loading"),
+                        )
+                      : const SizedBox.shrink()
+                ],
+              )))),
     );
   }
 }
