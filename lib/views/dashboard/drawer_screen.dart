@@ -145,7 +145,9 @@ class DrawerScreen extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/wallet_setup");
+                      },
                       leading: const Icon(Icons.account_balance),
                       title: Text(
                         "Balance",

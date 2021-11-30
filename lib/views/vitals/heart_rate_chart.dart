@@ -1,4 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -24,11 +25,14 @@ class _HeartRateChartState extends State<HeartRateChart> {
         AspectRatio(
           aspectRatio: 1.70,
           child: Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(18),
-                ),
-                color: AppColors.Color2),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(18),
+              ),
+              color: ThemeController.to.themeMode == ThemeMode.light
+                  ? AppColors.Color2
+                  : Colors.transparent,
+            ),
             child: Padding(
               padding:
                   const EdgeInsets.only(right: 0, left: 0, top: 24, bottom: 0),

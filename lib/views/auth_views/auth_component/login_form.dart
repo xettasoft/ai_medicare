@@ -1,4 +1,5 @@
 import 'package:ai_medicare/controllers/login_controller.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,9 @@ class LoginForm extends GetView<LoginController> {
           ),
           Container(
               decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
+                  color: ThemeController.to.themeMode == ThemeMode.light
+                      ? Colors.grey.shade200
+                      : Colors.black26,
                   borderRadius: BorderRadius.circular(25)),
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
               child: Row(
@@ -53,7 +56,9 @@ class LoginForm extends GetView<LoginController> {
           ),
           Container(
               decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
+                  color: ThemeController.to.themeMode == ThemeMode.light
+                      ? Colors.grey.shade200
+                      : Colors.black26,
                   borderRadius: BorderRadius.circular(25)),
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
               child: Row(

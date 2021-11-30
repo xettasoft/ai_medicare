@@ -1,5 +1,6 @@
 import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/symptom_checker_controller.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:ai_medicare/views/symptom_checker/check_now.dart';
 import 'package:ai_medicare/views/symptom_checker/last_checked.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,10 @@ class SymptomCheck extends GetView<SymptomCheckerController> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              color: Colors.grey.shade200,
+                              color: ThemeController.to.themeMode ==
+                                      ThemeMode.light
+                                  ? Colors.grey.shade200
+                                  : Colors.black45,
                               child: Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: TabBar(

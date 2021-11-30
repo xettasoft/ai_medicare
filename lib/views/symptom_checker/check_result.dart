@@ -1,5 +1,6 @@
 import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/symptom_checker_controller.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:ai_medicare/views/symptom_checker/result_card.dart';
 import 'package:ai_medicare/views/symptom_checker/save.dart';
 import 'package:ai_medicare/views/symptom_checker/share.dart';
@@ -37,7 +38,10 @@ class CheckResult extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           decoration: BoxDecoration(
-                              color: Colors.grey.shade100,
+                              color: ThemeController.to.themeMode ==
+                                      ThemeMode.light
+                                  ? Colors.grey.shade100
+                                  : Colors.black45,
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(20))),
                           child: const Center(
@@ -59,30 +63,30 @@ class CheckResult extends StatelessWidget {
                               },
                             )),
                       ),
-                      Expanded(
-                          flex: 0,
-                          child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 20),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    primary: AppColors.appPrimaryColor,
-                                    shape: const StadiumBorder()),
-                                onPressed: () {
-                                  _Done(context, isShare: false);
-                                  //Get.offAndToNamed("/vitals");
-                                },
-                                child: Center(
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 15),
-                                    child: Text(
-                                      "Save".tr,
-                                      style: const TextStyle(fontSize: 18),
-                                    ),
-                                  ),
-                                ),
-                              ))),
+                      // Expanded(
+                      //     flex: 0,
+                      //     child: Padding(
+                      //         padding: const EdgeInsets.symmetric(
+                      //             vertical: 5, horizontal: 20),
+                      //         child: ElevatedButton(
+                      //           style: ElevatedButton.styleFrom(
+                      //               primary: AppColors.appPrimaryColor,
+                      //               shape: const StadiumBorder()),
+                      //           onPressed: () {
+                      //             _Done(context, isShare: false);
+                      //             //Get.offAndToNamed("/vitals");
+                      //           },
+                      //           child: Center(
+                      //             child: Padding(
+                      //               padding: const EdgeInsets.symmetric(
+                      //                   vertical: 15),
+                      //               child: Text(
+                      //                 "Save".tr,
+                      //                 style: const TextStyle(fontSize: 18),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ))),
                       Expanded(
                           flex: 0,
                           child: Padding(

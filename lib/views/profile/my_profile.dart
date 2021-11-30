@@ -16,22 +16,26 @@ class MyProfile extends StatelessWidget {
       {
         "icon": "personal_data.svg",
         "title": "Personal Data",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
       {
         "icon": "medical_records.svg",
         "title": "Medical Records",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
       {
         "icon": "my_doctors.svg",
         "title": "My Doctors",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
       {
         "icon": "prescriptions.svg",
         "title": "Prescriptions",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
     ];
 
@@ -39,7 +43,8 @@ class MyProfile extends StatelessWidget {
       {
         "icon": "notification.svg",
         "title": "Pop-up Notification",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
     ];
 
@@ -47,17 +52,20 @@ class MyProfile extends StatelessWidget {
       {
         "icon": "contact_us.svg",
         "title": "Contact Us",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
       {
         "icon": "privacy_policy.svg",
         "title": "Privacy Policy",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
       {
         "icon": "setting.svg",
         "title": "Settings",
-        "trailing": const Icon(Icons.arrow_forward_ios)
+        "trailing": const Icon(Icons.arrow_forward_ios),
+        "route": "/settings"
       },
     ];
 

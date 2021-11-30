@@ -1,5 +1,6 @@
 import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/medication_controller.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
@@ -35,7 +36,10 @@ class Medications extends GetView<MedicationController> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 5, vertical: 0),
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade100,
+                            color:
+                                ThemeController.to.themeMode == ThemeMode.light
+                                    ? Colors.grey.shade100
+                                    : Colors.black45,
                             borderRadius: const BorderRadius.all(
                               Radius.circular(20),
                             ),

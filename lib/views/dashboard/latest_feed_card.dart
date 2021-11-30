@@ -1,4 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,9 @@ class LatestFeedCard extends StatelessWidget {
             //padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
             width: width,
             decoration: BoxDecoration(
-                color: AppColors.Color2,
+                color: ThemeController.to.themeMode == ThemeMode.light
+                    ? AppColors.Color2
+                    : Colors.black45,
                 borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),

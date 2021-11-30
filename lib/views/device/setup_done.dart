@@ -1,4 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,9 @@ class SetupDone extends StatelessWidget {
         margin: const EdgeInsets.only(top: 10, right: 10),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         decoration: BoxDecoration(
-            color: AppColors.whiteColor,
+            color: ThemeController.to.themeMode == ThemeMode.light
+                ? AppColors.whiteColor
+                : Colors.black87,
             borderRadius: const BorderRadius.all(
               Radius.circular(15),
             ),

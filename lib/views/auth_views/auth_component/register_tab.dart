@@ -1,4 +1,3 @@
-import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/views/auth_views/auth_component/user_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,7 +10,7 @@ class RegisterTab extends StatelessWidget {
     double width = Get.width;
     double height = Get.height;
     return Scaffold(
-      backgroundColor: AppColors.Color1,
+      //backgroundColor: AppColors.Color1,
       body: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +39,7 @@ class RegisterTab extends StatelessWidget {
               )),
           const Expanded(
             child: UserForm(
-              title: "user",
+              title: "",
             ),
           )
         ],

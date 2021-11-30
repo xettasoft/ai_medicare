@@ -1,4 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:ai_medicare/views/appointment/appointments.dart';
 import 'package:ai_medicare/views/dashboard/drawer_screen.dart';
 import 'package:ai_medicare/views/dashboard/home.dart';
@@ -67,7 +68,10 @@ class Navigator extends StatelessWidget {
                       _buildScreens(() => Scaffold.of(context).openDrawer()),
                   items: _navBarsItems(),
                   confineInSafeArea: true,
-                  backgroundColor: Colors.white, // Default is Colors.white.
+                  backgroundColor:
+                      ThemeController.to.themeMode == ThemeMode.light
+                          ? Colors.white
+                          : Colors.black87, // Default is Colors.white.
                   handleAndroidBackButtonPress: true, // Default is true.
                   resizeToAvoidBottomInset:
                       true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
@@ -76,7 +80,10 @@ class Navigator extends StatelessWidget {
                       true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
                   decoration: NavBarDecoration(
                       borderRadius: BorderRadius.circular(10.0),
-                      colorBehindNavBar: Colors.white,
+                      colorBehindNavBar:
+                          ThemeController.to.themeMode == ThemeMode.light
+                              ? Colors.white
+                              : Colors.black54,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.2),

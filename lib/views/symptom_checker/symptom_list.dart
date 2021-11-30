@@ -1,5 +1,6 @@
 import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/symptom_checker_controller.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:ai_medicare/views/symptom_checker/single_symptom.dart';
 import 'package:ai_medicare/views/symptom_checker/symptom_search.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,10 @@ class SymptomList extends StatelessWidget {
                               margin:
                                   const EdgeInsets.symmetric(horizontal: 20),
                               decoration: BoxDecoration(
-                                  color: Colors.grey.shade200,
+                                  color: ThemeController.to.themeMode ==
+                                          ThemeMode.light
+                                      ? Colors.grey.shade200
+                                      : Colors.black45,
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(20))),
                               child: Obx(() => ListView.builder(

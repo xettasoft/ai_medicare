@@ -1,4 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -22,7 +23,9 @@ class MenuCard extends StatelessWidget {
             decoration: BoxDecoration(
                 color: menu!["primary"] == "yes"
                     ? AppColors.appPrimaryColor
-                    : Colors.grey.shade200,
+                    : ThemeController.to.themeMode == ThemeMode.light
+                        ? Colors.grey.shade200
+                        : Colors.black45,
                 borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),

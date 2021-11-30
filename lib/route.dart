@@ -23,8 +23,10 @@ import 'package:ai_medicare/views/onboarding/onboard_4.dart';
 import 'package:ai_medicare/views/onboarding/onboarding.dart';
 import 'package:ai_medicare/views/pharmacy/pharmacy.dart';
 import 'package:ai_medicare/views/profile/my_profile.dart';
+import 'package:ai_medicare/views/profile/settings.dart';
 import 'package:ai_medicare/views/symptom_checker/symptom_checker.dart';
 import 'package:ai_medicare/views/vitals/vitals.dart';
+import 'package:ai_medicare/views/wallet/setup.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 makeRoute() {
@@ -115,6 +117,14 @@ makeRoute() {
       name: '/home',
       page: () => Navigator(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: '/wallet_setup',
+      page: () => const WalletStup(),
+    ),
+    GetPage(
+      name: '/settings',
+      page: () => const Settings(),
     ),
   ];
 }

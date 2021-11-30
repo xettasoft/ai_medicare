@@ -1,3 +1,4 @@
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
@@ -12,7 +13,10 @@ class ATextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
       decoration: BoxDecoration(
-          color: Colors.grey.shade200, borderRadius: BorderRadius.circular(20)),
+          color: ThemeController.to.themeMode == ThemeMode.light
+              ? Colors.grey.shade200
+              : Colors.black26,
+          borderRadius: BorderRadius.circular(20)),
       padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 20),
       child: Row(
         children: [

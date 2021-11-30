@@ -1,4 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,9 @@ class MedicationTile extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.1),
+            color: ThemeController.to.themeMode == ThemeMode.light
+                ? Colors.grey.withOpacity(0.1)
+                : Colors.black45,
             borderRadius: const BorderRadius.all(Radius.circular(20))),
         child: ExpansionTile(
           title: Text(

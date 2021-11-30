@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,9 @@ class DeviceReading extends StatelessWidget {
           width: width,
           height: height * .4,
           decoration: BoxDecoration(
-              color: AppColors.whiteColor,
+              color: ThemeController.to.themeMode == ThemeMode.light
+                  ? AppColors.whiteColor
+                  : Colors.black45,
               borderRadius: const BorderRadius.all(
                 Radius.circular(15),
               ),
@@ -112,7 +115,9 @@ class DeviceReading extends StatelessWidget {
               //width: width,
               height: height * .2,
               decoration: BoxDecoration(
-                  color: AppColors.whiteColor,
+                  color: ThemeController.to.themeMode == ThemeMode.light
+                      ? AppColors.whiteColor
+                      : Colors.black45,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(15),
                   ),
@@ -176,7 +181,9 @@ class DeviceReading extends StatelessWidget {
                 width: width,
                 height: height * .2,
                 decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    color: ThemeController.to.themeMode == ThemeMode.light
+                        ? AppColors.whiteColor
+                        : Colors.black45,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(15),
                     ),

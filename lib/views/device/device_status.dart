@@ -1,4 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +17,11 @@ class DeviceStatus extends StatelessWidget {
       margin: const EdgeInsets.only(top: 25, left: 15, right: 15),
       width: width,
       padding: const EdgeInsets.symmetric(vertical: 0),
-      decoration: const BoxDecoration(
-        color: AppColors.Color2,
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        color: ThemeController.to.themeMode == ThemeMode.light
+            ? AppColors.Color2
+            : Colors.black45,
+        borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
       ),
