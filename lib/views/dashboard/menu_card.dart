@@ -25,7 +25,7 @@ class MenuCard extends StatelessWidget {
                     ? AppColors.appPrimaryColor
                     : ThemeController.to.themeMode == ThemeMode.light
                         ? Colors.grey.shade200
-                        : Colors.black45,
+                        : AppColors.Color6,
                 borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),

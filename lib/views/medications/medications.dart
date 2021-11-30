@@ -39,7 +39,7 @@ class Medications extends GetView<MedicationController> {
                             color:
                                 ThemeController.to.themeMode == ThemeMode.light
                                     ? Colors.grey.shade100
-                                    : Colors.black45,
+                                    : AppColors.Color6,
                             borderRadius: const BorderRadius.all(
                               Radius.circular(20),
                             ),

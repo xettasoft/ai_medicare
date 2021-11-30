@@ -1,3 +1,4 @@
+import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,7 +21,7 @@ class ProfileCard extends StatelessWidget {
       decoration: BoxDecoration(
           color: ThemeController.to.themeMode == ThemeMode.light
               ? Colors.white
-              : Colors.black45,
+              : AppColors.Color6,
           borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),
@@ -28,7 +29,7 @@ class ProfileCard extends StatelessWidget {
             BoxShadow(
               color: ThemeController.to.themeMode == ThemeMode.light
                   ? Colors.grey.withOpacity(0.2)
-                  : Colors.black45.withOpacity(0.1),
+                  : AppColors.Color6.withOpacity(0.1),
               spreadRadius: 5,
               blurRadius: 7,
               offset: const Offset(0, 3), // changes position of shadow

@@ -1,3 +1,4 @@
+import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ class SymptomSearchField extends StatelessWidget {
         decoration: BoxDecoration(
             color: ThemeController.to.themeMode == ThemeMode.light
                 ? Colors.grey.shade200
-                : Colors.black45,
+                : AppColors.Color6,
             borderRadius: BorderRadius.circular(20)),
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
         child: Row(

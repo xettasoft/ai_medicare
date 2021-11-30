@@ -32,7 +32,7 @@ class SymptomList extends StatelessWidget {
                                   color: ThemeController.to.themeMode ==
                                           ThemeMode.light
                                       ? Colors.grey.shade200
-                                      : Colors.black45,
+                                      : AppColors.Color6,
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(20))),
                               child: Obx(() => ListView.builder(

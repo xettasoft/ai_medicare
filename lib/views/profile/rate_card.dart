@@ -21,7 +21,7 @@ class ProfileRateCard extends StatelessWidget {
       decoration: BoxDecoration(
           color: ThemeController.to.themeMode == ThemeMode.light
               ? Colors.white
-              : Colors.black45,
+              : AppColors.Color6,
           borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),

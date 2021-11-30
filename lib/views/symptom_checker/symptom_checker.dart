@@ -43,7 +43,7 @@ class SymptomCheck extends GetView<SymptomCheckerController> {
                               color: ThemeController.to.themeMode ==
                                       ThemeMode.light
                                   ? Colors.grey.shade200
-                                  : Colors.black45,
+                                  : AppColors.Color6,
                               child: Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: TabBar(

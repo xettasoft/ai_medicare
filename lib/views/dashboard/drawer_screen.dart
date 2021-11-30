@@ -146,7 +146,7 @@ class DrawerScreen extends StatelessWidget {
                         const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                     child: ListTile(
                       onTap: () {
-                        Get.toNamed("/wallet_setup");
+                        Get.toNamed("/wallet_balance");
                       },
                       leading: const Icon(Icons.account_balance),
                       title: Text(
@@ -159,7 +159,9 @@ class DrawerScreen extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/wallet_setup");
+                      },
                       leading: const Icon(Icons.money),
                       title: Text(
                         "TopUp",
@@ -171,22 +173,12 @@ class DrawerScreen extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                     child: ListTile(
-                      onTap: () {},
-                      leading: const Icon(Icons.list),
-                      title: Text(
-                        "Transactions",
-                        style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
-                      ),
-                    )),
-                Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                    child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/reciepts");
+                      },
                       leading: const Icon(Icons.receipt),
                       title: Text(
-                        "Receipt",
+                        "Receipts",
                         style: TextStyle(
                             color: Colors.grey.shade500, fontSize: 20),
                       ),

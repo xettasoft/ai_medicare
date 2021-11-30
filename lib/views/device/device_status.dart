@@ -20,7 +20,7 @@ class DeviceStatus extends StatelessWidget {
       decoration: BoxDecoration(
         color: ThemeController.to.themeMode == ThemeMode.light
             ? AppColors.Color2
-            : Colors.black45,
+            : AppColors.Color6,
         borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),

@@ -3,6 +3,7 @@ import 'package:ai_medicare/bindings/login_binding.dart';
 import 'package:ai_medicare/bindings/medication_binding.dart';
 import 'package:ai_medicare/bindings/register_binding.dart';
 import 'package:ai_medicare/bindings/setup_binding.dart';
+import 'package:ai_medicare/bindings/setup_wallet_binding.dart';
 import 'package:ai_medicare/bindings/symptom_checker_binding.dart';
 import 'package:ai_medicare/views/auth_views/complete_register.dart';
 import 'package:ai_medicare/views/auth_views/final_step.dart';
@@ -26,6 +27,11 @@ import 'package:ai_medicare/views/profile/my_profile.dart';
 import 'package:ai_medicare/views/profile/settings.dart';
 import 'package:ai_medicare/views/symptom_checker/symptom_checker.dart';
 import 'package:ai_medicare/views/vitals/vitals.dart';
+import 'package:ai_medicare/views/wallet/balance.dart';
+import 'package:ai_medicare/views/wallet/card_details.dart';
+import 'package:ai_medicare/views/wallet/card_success.dart';
+import 'package:ai_medicare/views/wallet/receipts.dart';
+import 'package:ai_medicare/views/wallet/reciept.dart';
 import 'package:ai_medicare/views/wallet/setup.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -95,7 +101,7 @@ makeRoute() {
     ),
     GetPage(
         name: '/medications',
-        page: () => Medications(),
+        page: () => const Medications(),
         binding: MedicationBinding()),
     GetPage(
       name: '/medication',
@@ -119,12 +125,32 @@ makeRoute() {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: '/wallet_setup',
-      page: () => const WalletStup(),
-    ),
+        name: '/wallet_setup',
+        page: () => const WalletStup(),
+        binding: SetupWalletBinding()),
     GetPage(
       name: '/settings',
       page: () => const Settings(),
+    ),
+    GetPage(
+        name: '/pay_card',
+        page: () => const CardDetails(),
+        binding: SetupWalletBinding()),
+    GetPage(
+        name: '/pay_card_success',
+        page: () => const CardSuccess(),
+        binding: SetupWalletBinding()),
+    GetPage(
+      name: '/wallet_balance',
+      page: () => const WalletBalance(),
+    ),
+    GetPage(
+      name: '/reciepts',
+      page: () => const Reciepts(),
+    ),
+    GetPage(
+      name: '/reciept',
+      page: () => const Reciept(),
     ),
   ];
 }

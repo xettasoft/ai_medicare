@@ -14,7 +14,7 @@ class MedicationTile extends StatelessWidget {
         decoration: BoxDecoration(
             color: ThemeController.to.themeMode == ThemeMode.light
                 ? Colors.grey.withOpacity(0.1)
-                : Colors.black45,
+                : AppColors.Color6,
             borderRadius: const BorderRadius.all(Radius.circular(20))),
         child: ExpansionTile(
           title: Text(
