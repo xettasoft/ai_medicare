@@ -14,6 +14,8 @@ import 'package:ai_medicare/views/dashboard/navigator.dart';
 import 'package:ai_medicare/views/device/setup.dart';
 import 'package:ai_medicare/views/doctor/doctor_profile.dart';
 import 'package:ai_medicare/views/doctor/my_doctors.dart';
+import 'package:ai_medicare/views/hospital/hospital.dart';
+import 'package:ai_medicare/views/lab/lab.dart';
 import 'package:ai_medicare/views/medications/medications.dart';
 import 'package:ai_medicare/views/medications/single_medication.dart';
 import 'package:ai_medicare/views/notification/notification.dart';
@@ -151,6 +153,14 @@ makeRoute() {
     GetPage(
       name: '/reciept',
       page: () => const Reciept(),
+    ),
+    GetPage(
+      name: '/hospital',
+      page: () => const Hospital(),
+    ),
+    GetPage(
+      name: '/lab',
+      page: () => const Lab(),
     ),
   ];
 }
