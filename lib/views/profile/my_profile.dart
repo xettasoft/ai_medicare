@@ -17,25 +17,25 @@ class MyProfile extends StatelessWidget {
         "icon": "personal_data.svg",
         "title": "Personal Data",
         "trailing": const Icon(Icons.arrow_forward_ios),
-        "route": "/settings"
+        "route": "/personalData"
       },
       {
         "icon": "medical_records.svg",
         "title": "Medical Records",
         "trailing": const Icon(Icons.arrow_forward_ios),
-        "route": "/settings"
+        "route": "/myRecords"
       },
       {
         "icon": "my_doctors.svg",
         "title": "My Doctors",
         "trailing": const Icon(Icons.arrow_forward_ios),
-        "route": "/settings"
+        "route": "/myDoctors"
       },
       {
         "icon": "prescriptions.svg",
         "title": "Prescriptions",
         "trailing": const Icon(Icons.arrow_forward_ios),
-        "route": "/settings"
+        "route": "/prescriptions"
       },
     ];
 
@@ -44,7 +44,7 @@ class MyProfile extends StatelessWidget {
         "icon": "notification.svg",
         "title": "Pop-up Notification",
         "trailing": const Icon(Icons.arrow_forward_ios),
-        "route": "/settings"
+        "route": "/push_settings"
       },
     ];
 
@@ -53,13 +53,13 @@ class MyProfile extends StatelessWidget {
         "icon": "contact_us.svg",
         "title": "Contact Us",
         "trailing": const Icon(Icons.arrow_forward_ios),
-        "route": "/settings"
+        "route": "/contactUs"
       },
       {
         "icon": "privacy_policy.svg",
         "title": "Privacy Policy",
         "trailing": const Icon(Icons.arrow_forward_ios),
-        "route": "/settings"
+        "route": "/privacy"
       },
       {
         "icon": "setting.svg",

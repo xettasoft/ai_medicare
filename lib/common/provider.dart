@@ -3,7 +3,7 @@ import 'package:get/get_connect/http/src/response/response.dart';
 class ProviderConstant {
   ProviderConstant._();
 
-  static const String baseUrl = "https://alongkab2.herokuapp.com/api/";
+  static const String baseUrl = "https://aimedicare-backend.herokuapp.com/api/";
   static const int timeOut = 15;
   static const String token = "token";
 

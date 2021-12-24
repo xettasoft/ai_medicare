@@ -39,7 +39,12 @@ class LatestFeed extends StatelessWidget {
                   width: width,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (_, index) => const LatestFeedCard(),
+                    itemBuilder: (_, index) => GestureDetector(
+                      child: const LatestFeedCard(),
+                      onTap: () {
+                        Get.toNamed('/newsfeed');
+                      },
+                    ),
                     itemCount: 5,
                   ))),
         ),

@@ -1,6 +1,7 @@
 import 'package:ai_medicare/bindings/home_binding.dart';
 import 'package:ai_medicare/bindings/login_binding.dart';
 import 'package:ai_medicare/bindings/medication_binding.dart';
+import 'package:ai_medicare/bindings/notification_binding.dart';
 import 'package:ai_medicare/bindings/register_binding.dart';
 import 'package:ai_medicare/bindings/setup_binding.dart';
 import 'package:ai_medicare/bindings/setup_wallet_binding.dart';
@@ -10,6 +11,7 @@ import 'package:ai_medicare/views/auth_views/final_step.dart';
 import 'package:ai_medicare/views/auth_views/login.dart';
 import 'package:ai_medicare/views/auth_views/register.dart';
 import 'package:ai_medicare/views/auth_views/welcome.dart';
+import 'package:ai_medicare/views/cart/cart.dart';
 import 'package:ai_medicare/views/dashboard/navigator.dart';
 import 'package:ai_medicare/views/device/setup.dart';
 import 'package:ai_medicare/views/doctor/doctor_profile.dart';
@@ -18,6 +20,8 @@ import 'package:ai_medicare/views/hospital/hospital.dart';
 import 'package:ai_medicare/views/lab/lab.dart';
 import 'package:ai_medicare/views/medications/medications.dart';
 import 'package:ai_medicare/views/medications/single_medication.dart';
+import 'package:ai_medicare/views/messaging/chat.dart';
+import 'package:ai_medicare/views/news%20feed/feed.dart';
 import 'package:ai_medicare/views/notification/notification.dart';
 import 'package:ai_medicare/views/onboarding/onboard_1.dart';
 import 'package:ai_medicare/views/onboarding/onboard_2.dart';
@@ -26,8 +30,16 @@ import 'package:ai_medicare/views/onboarding/onboard_4.dart';
 import 'package:ai_medicare/views/onboarding/onboarding.dart';
 import 'package:ai_medicare/views/pharmacy/pharmacy.dart';
 import 'package:ai_medicare/views/profile/my_profile.dart';
+import 'package:ai_medicare/views/profile/my_records.dart';
+import 'package:ai_medicare/views/profile/personal_data.dart';
+import 'package:ai_medicare/views/profile/prescriptions.dart';
+import 'package:ai_medicare/views/profile/push_notification.dart';
 import 'package:ai_medicare/views/profile/settings.dart';
 import 'package:ai_medicare/views/symptom_checker/symptom_checker.dart';
+import 'package:ai_medicare/views/system/about.dart';
+import 'package:ai_medicare/views/system/contact_us.dart';
+import 'package:ai_medicare/views/system/faq.dart';
+import 'package:ai_medicare/views/system/privacy.dart';
 import 'package:ai_medicare/views/vitals/vitals.dart';
 import 'package:ai_medicare/views/wallet/balance.dart';
 import 'package:ai_medicare/views/wallet/card_details.dart';
@@ -82,9 +94,9 @@ makeRoute() {
       page: () => const Welcome(),
     ),
     GetPage(
-      name: '/notifications',
-      page: () => Notifications(),
-    ),
+        name: '/notifications',
+        page: () => Notifications(),
+        binding: NotificationBinding()),
     GetPage(
         name: '/symptomCheck',
         page: () => SymptomCheck(),
@@ -161,6 +173,50 @@ makeRoute() {
     GetPage(
       name: '/lab',
       page: () => const Lab(),
+    ),
+    GetPage(
+      name: '/cart',
+      page: () => const Cart(),
+    ),
+    GetPage(
+      name: '/about',
+      page: () => const AboutUs(),
+    ),
+    GetPage(
+      name: '/privacy',
+      page: () => const PrivacyPolicy(),
+    ),
+    GetPage(
+      name: '/contactUs',
+      page: () => const ContactUs(),
+    ),
+    GetPage(
+      name: '/push_settings',
+      page: () => const PushNotification(),
+    ),
+    GetPage(
+      name: '/prescriptions',
+      page: () => const Prescriptions(),
+    ),
+    GetPage(
+      name: '/myRecords',
+      page: () => const MyRecord(),
+    ),
+    GetPage(
+      name: '/personalData',
+      page: () => const PersonalData(),
+    ),
+    GetPage(
+      name: '/chat',
+      page: () => const Chat(),
+    ),
+    GetPage(
+      name: '/newsfeed',
+      page: () => const NewsFeed(),
+    ),
+    GetPage(
+      name: '/faq',
+      page: () => const Faq(),
     ),
   ];
 }

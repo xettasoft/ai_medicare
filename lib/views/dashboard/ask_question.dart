@@ -34,7 +34,7 @@ class AskQuestion extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Get.toNamed("/symptomCheck");
+                Get.toNamed("/faq");
               },
               child: const Text("Post"),
               style: ElevatedButton.styleFrom(

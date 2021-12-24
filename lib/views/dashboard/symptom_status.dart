@@ -36,7 +36,7 @@ class SymptomCheckerStatus extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Get.toNamed("/symptomCheck");
+                Get.toNamed("/wallet_setup");
               },
               child: const Text("low balance"),
               style: ElevatedButton.styleFrom(

@@ -60,6 +60,9 @@ class MyAppointments extends StatelessWidget {
                   itemCount: data.length,
                   itemBuilder: (context, index) {
                     return ListTile(
+                      onTap: () {
+                        Get.toNamed("/chat");
+                      },
                       leading: CircleAvatar(
                           backgroundColor: Colors.transparent,
                           child: Image.asset(

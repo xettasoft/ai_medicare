@@ -17,9 +17,8 @@ void main() {
   Get.lazyPut<ThemeController>(() => ThemeController());
   ThemeController.to.getThemeModeFromPreferences();
   runApp(GetMaterialApp(
-    translations: Messages(), // your translations
-    locale: const Locale(
-        'en', 'UK'), // translations will be displayed in that locale
+    translations: Messages(),
+    locale: const Locale('en', 'UK'),
     fallbackLocale: const Locale('en', 'UK'),
     title: "appName".tr,
     debugShowCheckedModeBanner: false,

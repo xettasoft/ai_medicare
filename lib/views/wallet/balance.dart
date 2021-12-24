@@ -97,7 +97,7 @@ class WalletBalance extends StatelessWidget {
                 )),
             const Expanded(
               flex: 0,
-              child: Text("dsdsd"),
+              child: Text("Slide"),
             ),
             Expanded(
               flex: 0,

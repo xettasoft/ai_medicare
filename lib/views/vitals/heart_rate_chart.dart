@@ -44,7 +44,7 @@ class _HeartRateChartState extends State<HeartRateChart> {
         ),
         SizedBox(
           //width: 60,
-          height: 50,
+          height: 60,
           child: TextButton(
             onPressed: () {
               setState(() {

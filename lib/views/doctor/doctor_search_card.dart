@@ -67,7 +67,11 @@ class DoctorSearchCard extends StatelessWidget {
               ),
               canMessage!
                   ? GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/chat");
+
+                        ///chat
+                      },
                       child: const Icon(
                         Icons.chat,
                         color: AppColors.appPrimaryColor,

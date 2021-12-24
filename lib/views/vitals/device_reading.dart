@@ -212,7 +212,7 @@ class DeviceReading extends StatelessWidget {
                       const Expanded(
                         flex: 0,
                         child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 10),
+                            padding: EdgeInsets.symmetric(vertical: 5),
                             child: Text(
                               "76 KCal",
                               style: TextStyle(

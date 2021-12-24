@@ -22,7 +22,7 @@ class Navigator extends StatelessWidget {
     ];
   }
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
+  List<PersistentBottomNavBarItem> _navBarsItems(double width) {
     return [
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.home),
@@ -66,7 +66,7 @@ class Navigator extends StatelessWidget {
                   controller: _controller,
                   screens:
                       _buildScreens(() => Scaffold.of(context).openDrawer()),
-                  items: _navBarsItems(),
+                  items: _navBarsItems(width),
                   confineInSafeArea: true,
                   backgroundColor:
                       ThemeController.to.themeMode == ThemeMode.light

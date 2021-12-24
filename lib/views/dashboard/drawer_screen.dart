@@ -108,7 +108,9 @@ class DrawerScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 10),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/cart");
+                      },
                       leading: const Icon(Icons.shopping_cart_outlined),
                       title: Text(
                         "Cart",
@@ -208,7 +210,9 @@ class DrawerScreen extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed("/about");
+                      },
                       leading: const Icon(Icons.info),
                       title: Text(
                         "About",
@@ -226,9 +230,10 @@ class DrawerScreen extends StatelessWidget {
                         Get.toNamed('/login');
                       },
                       leading: const Icon(Icons.logout),
-                      title: const Text(
+                      title: Text(
                         "Log Out",
-                        style: TextStyle(color: Colors.black87, fontSize: 20),
+                        style: TextStyle(
+                            color: Colors.grey.shade500, fontSize: 20),
                       ),
                     ),
                   ),
