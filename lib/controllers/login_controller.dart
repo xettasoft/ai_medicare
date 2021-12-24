@@ -1,5 +1,6 @@
 import 'package:ai_medicare/providers/login_provider.dart';
-import 'package:ai_medicare/providers/models/authModel/login_model.dart';
+import 'package:ai_medicare/providers/models/authModel/auth_model.dart';
+import 'package:ai_medicare/providers/models/authModel/login_request.dart';
 import 'package:ai_medicare/validators/validators.dart';
 import 'package:get/get.dart';
 
@@ -36,7 +37,7 @@ class LoginController extends GetxController {
       submitFunc.value = submitFunction();
       uErorText.value = null;
     } else {
-      uErorText.value = 'enter username';
+      uErorText.value = 'enter Email';
     }
   }
 
@@ -47,14 +48,14 @@ class LoginController extends GetxController {
       submitFunc.value = submitFunction();
       pErorText.value = null;
     } else {
-      pErorText.value = 'enter username';
+      pErorText.value = 'enter Email';
     }
   }
 
-  Future<LoginModel> login() async {
+  Future<AuthModel> login() async {
     loading.value = true;
-    var data = {"username": username.value, "password": password.value};
-    LoginModel result = await authProvider.login(data);
+    var request = LoginRquest(email: username.value, password: password.value);
+    AuthModel result = await authProvider.login(request);
     loading.value = false;
     username.value = "";
     password.value = "";
@@ -63,7 +64,7 @@ class LoginController extends GetxController {
     return result;
   }
 
-  Future<LoginModel> Function() submitFunction() {
+  Future<AuthModel> Function() submitFunction() {
     return () async {
       return await login();
     };

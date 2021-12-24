@@ -1,18 +1,19 @@
 import 'package:ai_medicare/providers/base_provider.dart';
-import 'package:ai_medicare/providers/models/authModel/login_model.dart';
+import 'package:ai_medicare/providers/models/authModel/auth_model.dart';
+import 'package:ai_medicare/providers/models/authModel/login_request.dart';
 import 'package:get/get.dart';
 
 class LoginProvider extends BaseProvider {
-  Future<LoginModel> login(Map body) async {
+  Future<AuthModel> login(LoginRquest request) async {
     Response? res;
     try {
-      res = await post("token/", body);
+      res = await post("/users/login", request.toJson());
       if (res.statusCode == 200 || res.statusCode == 201) {
-        return LoginModel.fromJson(res.body);
+        return AuthModel.fromJson(res.body);
       }
-      return LoginModel.withError(res.body);
+      return AuthModel.withError(res.body);
     } catch (e) {
-      return LoginModel.withError(res?.body);
+      return AuthModel.withError(res?.body);
     }
   }
 }
