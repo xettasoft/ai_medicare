@@ -1,6 +1,5 @@
 import 'package:ai_medicare/common/colors.dart';
 import 'package:ai_medicare/controllers/theme_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +16,7 @@ class ProfileRateCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 10, left: 0),
       padding: const EdgeInsets.symmetric(horizontal: 5),
-      height: height * 0.1,
+      //height: height * 0.1,
       decoration: BoxDecoration(
           color: ThemeController.to.themeMode == ThemeMode.light
               ? Colors.white
@@ -28,7 +27,7 @@ class ProfileRateCard extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: ThemeController.to.themeMode == ThemeMode.light
-                  ? Colors.grey.withOpacity(0.2)
+                  ? Colors.grey.withOpacity(0.1)
                   : Colors.black45.withOpacity(0.1),
               spreadRadius: 5,
               blurRadius: 7,

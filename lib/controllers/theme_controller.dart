@@ -20,12 +20,12 @@ class ThemeController extends GetxController {
   getThemeModeFromPreferences() async {
     ThemeMode themeMode;
     prefs = await SharedPreferences?.getInstance();
-    String themeText = prefs?.getString('theme') ?? 'system';
+    String themeText = prefs?.getString('theme') ?? 'light';
     try {
       themeMode =
           ThemeMode.values.firstWhere((e) => describeEnum(e) == themeText);
     } catch (e) {
-      themeMode = ThemeMode.system;
+      themeMode = ThemeMode.light;
     }
     setThemeMode(themeMode);
   }

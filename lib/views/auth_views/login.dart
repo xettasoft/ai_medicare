@@ -10,9 +10,6 @@ class Login extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    bool darkModeOn = Get.isDarkMode;
-    double width = Get.width;
-    double height = Get.height;
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -32,9 +29,11 @@ class Login extends GetView<LoginController> {
                   Text(
                     "welcome".tr,
                     style: const TextStyle(
-                        fontSize: 40, fontWeight: FontWeight.bold),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.normal),
                   ),
-                  LoginForm()
+                  const LoginForm()
                 ],
               ),
             ),

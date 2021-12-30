@@ -10,6 +10,7 @@ class SymptomSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = Get.width;
     double height = Get.height;
+    print(ThemeController.to.themeMode);
 
     return Container(
         margin: const EdgeInsets.only(bottom: 10, left: 20, right: 20, top: 10),

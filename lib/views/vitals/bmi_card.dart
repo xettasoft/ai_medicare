@@ -20,7 +20,7 @@ class BMICard extends StatelessWidget {
           EdgeInsets.only(top: paddingTop!, left: padding!, right: padding!),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       width: width,
-      height: height * 0.2,
+      //height: height * 0.2,
       decoration: BoxDecoration(
           color: AppColors.appPrimaryColor,
           borderRadius: const BorderRadius.only(

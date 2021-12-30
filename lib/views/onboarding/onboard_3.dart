@@ -21,6 +21,7 @@ class OnboardingThree extends StatelessWidget {
                 SvgPicture.asset(
                   'assets/images/svg/onboard-3.svg',
                   width: width,
+                  fit: BoxFit.fill,
                 ),
                 Align(
                   alignment: Alignment.center,

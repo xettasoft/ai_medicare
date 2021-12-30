@@ -58,26 +58,51 @@ class Home extends GetView<HomeController> {
           padding: const EdgeInsets.only(left: 0, right: 0, bottom: 0),
           child: ListView(
             children: [
-              Obx(() {
-                if (controller.isDeviceSetupNotifier.isFalse) {
-                  SchedulerBinding.instance
-                      ?.addPostFrameCallback((_) => _deviceSetup(context));
-                }
-                controller.isDeviceSetupNotified();
-                return const SizedBox.shrink();
-              }),
-              const NameHeader(),
-              const BMICard(
-                isVital: true,
-                padding: 15,
-              ),
-              const SymptomCheckerStatus(),
-              DeviceStatus(action: () {
-                controller.isDeviceSetupNotified(state: false);
-              }),
-              Menu(),
-              const LatestFeed(),
-              const AskQuestion(),
+              Column(
+                children: [
+                  Expanded(
+                    flex: 0,
+                    child: Obx(() {
+                      if (controller.isDeviceSetupNotifier.isFalse) {
+                        SchedulerBinding.instance?.addPostFrameCallback(
+                            (_) => _deviceSetup(context));
+                      }
+                      controller.isDeviceSetupNotified();
+                      return const SizedBox.shrink();
+                    }),
+                  ),
+                  const Expanded(
+                    flex: 0,
+                    child: NameHeader(),
+                  ),
+                  const Expanded(
+                    flex: 0,
+                    child: BMICard(
+                      isVital: true,
+                      padding: 15,
+                    ),
+                  ),
+                  const Expanded(flex: 0, child: SymptomCheckerStatus()),
+                  Expanded(
+                    flex: 0,
+                    child: DeviceStatus(action: () {
+                      controller.isDeviceSetupNotified(state: false);
+                    }),
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child: Menu(),
+                  ),
+                  const Expanded(
+                    child: LatestFeed(),
+                    flex: 0,
+                  ),
+                  const Expanded(
+                    child: AskQuestion(),
+                    flex: 0,
+                  ),
+                ],
+              )
             ],
           ),
         ));

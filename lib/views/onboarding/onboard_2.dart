@@ -20,6 +20,7 @@ class OnboardingTwo extends StatelessWidget {
                 SvgPicture.asset(
                   'assets/images/svg/onboard-2.svg',
                   width: width,
+                  fit: BoxFit.fill,
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,

@@ -8,9 +8,7 @@ class Register extends GetView<RegisterController> {
 
   @override
   Widget build(BuildContext context) {
-    bool darkModeOn = Get.isDarkMode;
     double width = Get.width;
-    double height = Get.height;
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -19,7 +17,7 @@ class Register extends GetView<RegisterController> {
           Expanded(
             child: Center(
               child: Padding(
-                padding: EdgeInsets.only(top: width * 0.08),
+                padding: EdgeInsets.only(top: width * 0),
                 child: const RegisterTab(),
               ),
             ),

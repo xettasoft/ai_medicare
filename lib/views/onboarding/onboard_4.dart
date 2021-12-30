@@ -20,11 +20,12 @@ class OnboardingFour extends StatelessWidget {
                 SvgPicture.asset(
                   'assets/images/svg/onboard-4.svg',
                   width: width,
+                  fit: BoxFit.fill,
                 ),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Padding(
-                      padding: EdgeInsets.only(right: 35),
+                      padding: const EdgeInsets.only(right: 35),
                       child: SvgPicture.asset(
                         'assets/images/svg/logo-white.svg',
                         width: width * 0.3,

@@ -13,41 +13,45 @@ class LatestFeed extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: 30,
-        ),
-        const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Text(
-              "Latest Feed",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            )),
-        Container(
-          margin:
-              const EdgeInsets.only(top: 10, bottom: 30, left: 15, right: 15),
-          width: width,
-          height: height * 0.2,
-          decoration: const BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.all(
-              Radius.circular(15),
+        const Expanded(
+            flex: 0,
+            child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Text(
+                  "Latest Feed",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ))),
+        Expanded(
+          flex: 0,
+          child: Container(
+            margin:
+                const EdgeInsets.only(top: 10, bottom: 30, left: 15, right: 15),
+            width: width,
+            //height: height * 0.2,
+
+            decoration: const BoxDecoration(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.all(
+                Radius.circular(15),
+              ),
             ),
+            constraints: BoxConstraints(maxHeight: height * 0.25),
+            child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: SizedBox(
+                    width: width,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (_, index) => GestureDetector(
+                        child: const LatestFeedCard(),
+                        onTap: () {
+                          Get.toNamed('/newsfeed');
+                        },
+                      ),
+                      itemCount: 5,
+                    ))),
           ),
-          child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: SizedBox(
-                  width: width,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (_, index) => GestureDetector(
-                      child: const LatestFeedCard(),
-                      onTap: () {
-                        Get.toNamed('/newsfeed');
-                      },
-                    ),
-                    itemCount: 5,
-                  ))),
-        ),
+        )
       ],
     );
   }

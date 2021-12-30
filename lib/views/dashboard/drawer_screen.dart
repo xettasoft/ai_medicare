@@ -64,7 +64,7 @@ class DrawerScreen extends StatelessWidget {
                         leading: const Icon(Icons.home),
                         title: const Text(
                           "Home",
-                          style: TextStyle(color: Colors.black87, fontSize: 20),
+                          style: TextStyle(color: Colors.black87, fontSize: 16),
                         ),
                       ),
                     )),
@@ -79,7 +79,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "Profile",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                       trailing: const Icon(Icons.arrow_forward_ios_outlined),
                     )),
@@ -94,7 +94,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "Medications",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                       trailing: Badge(
                         badgeContent: const Text('3'),
@@ -115,7 +115,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "Cart",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                       trailing: Badge(
                         badgeContent: const Text('6'),
@@ -138,7 +138,7 @@ class DrawerScreen extends StatelessWidget {
                             const Icon(Icons.account_balance_wallet_rounded),
                         title: const Text(
                           "Wallet",
-                          style: TextStyle(color: Colors.black87, fontSize: 20),
+                          style: TextStyle(color: Colors.black87, fontSize: 16),
                         ),
                         trailing: const Icon(Icons.arrow_forward_ios_outlined),
                       ),
@@ -154,7 +154,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "Balance",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                     )),
                 Padding(
@@ -168,7 +168,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "TopUp",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                     )),
                 Padding(
@@ -182,7 +182,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "Receipts",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                     )),
                 Padding(
@@ -199,7 +199,7 @@ class DrawerScreen extends StatelessWidget {
                         leading: const Icon(Icons.vpn_key),
                         title: const Text(
                           "Security",
-                          style: TextStyle(color: Colors.black87, fontSize: 20),
+                          style: TextStyle(color: Colors.black87, fontSize: 16),
                         ),
                         trailing: const Icon(Icons.arrow_forward_ios_outlined),
                       ),
@@ -217,7 +217,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "About",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                     )),
                 Padding(
@@ -233,7 +233,7 @@ class DrawerScreen extends StatelessWidget {
                       title: Text(
                         "Log Out",
                         style: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 20),
+                            color: Colors.grey.shade500, fontSize: 16),
                       ),
                     ),
                   ),
