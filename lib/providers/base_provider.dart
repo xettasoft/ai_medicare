@@ -13,9 +13,10 @@ class BaseProvider extends GetConnect {
     httpClient.baseUrl = ProviderConstant.baseUrl;
     httpClient.defaultContentType = "application/json";
     httpClient.timeout = const Duration(seconds: ProviderConstant.timeOut);
-    httpClient.addResponseModifier((request, response) async {
-      print("request");
-    });
+    // httpClient.addResponseModifier((request, response) async {
+    //   print("request");
+    //   return response;
+    // });
     httpClient.addRequestModifier((Request request) async {
       // add request here
       return request;

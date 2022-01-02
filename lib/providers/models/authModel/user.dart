@@ -14,7 +14,8 @@ class UserModel {
       this.emergencyPhoneNumber,
       this.photo,
       this.status,
-      this.health});
+      this.health,
+      this.contact});
 
   final int? id;
   final String? firstName;
@@ -25,9 +26,10 @@ class UserModel {
   final String? status;
   final String? photo;
   final bool? isVerified;
-  final DateTime? createdAT;
-  final DateTime? lastLogin;
+  final String? createdAT;
+  final String? lastLogin;
   final HealthModel? health;
+  final ContactModel? contact;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         id: json["id"],
@@ -42,9 +44,10 @@ class UserModel {
         createdAT: json["created_at"],
         lastLogin: json["last_login"],
         health: HealthModel.fromJson(json["health_info"]),
+        contact: ContactModel.fromJson(json["contact_info"]),
       );
 
-  Map<String, dynamic> toJson(String? password, ContactModel? contact) => {
+  Map<String, dynamic> toJson(String? password) => {
         "first_name": firstName,
         "last_name": lastName,
         "email": email,

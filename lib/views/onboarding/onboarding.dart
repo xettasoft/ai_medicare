@@ -1,9 +1,11 @@
 import 'package:ai_medicare/common/colors.dart';
+import 'package:ai_medicare/controllers/seesion_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class Onboarding extends StatelessWidget {
+class Onboarding extends GetView<SessionController> {
   const Onboarding({Key? key}) : super(key: key);
 
   @override
@@ -27,6 +29,25 @@ class Onboarding extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Expanded(
+                    flex: 0,
+                    child: Obx(() {
+                      if (controller.isLoggedIn) {
+                        print("logged in");
+                        SchedulerBinding.instance
+                            ?.addPostFrameCallback((_) => Get.toNamed('/home'));
+                      } else if (controller.settings.firstTime != null) {
+                        if (controller.settings.firstTime == true) {
+                          SchedulerBinding.instance?.addPostFrameCallback(
+                              (_) => Get.toNamed('/onboarding-one'));
+                        } else {
+                          SchedulerBinding.instance?.addPostFrameCallback(
+                              (_) => Get.toNamed('/login'));
+                        }
+                      }
+                      return const SizedBox.shrink();
+                    }),
+                  ),
                   Expanded(
                       flex: 0,
                       child: Row(
@@ -55,29 +76,38 @@ class Onboarding extends StatelessWidget {
                           style: const TextStyle(fontSize: 18)),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 0,
                     child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 50, horizontal: 30),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Get.toNamed('/onboarding-one');
-                          },
-                          style: ElevatedButton.styleFrom(
-                              primary: AppColors.appPrimaryColor,
-                              shape: const StadiumBorder()),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 20),
-                              child: Text(
-                                "getStarted".tr,
-                                style: const TextStyle(fontSize: 18),
-                              ),
-                            ),
-                          ),
-                        )),
+                      padding: EdgeInsets.only(bottom: 50),
+                      child: CircularProgressIndicator(
+                        color: AppColors.appPrimaryColor,
+                      ),
+                    ),
                   ),
+                  // Expanded(
+                  //   flex: 0,
+                  //   child: Padding(
+                  //       padding: const EdgeInsets.symmetric(
+                  //           vertical: 50, horizontal: 30),
+                  //       child: ElevatedButton(
+                  //         onPressed: () {
+                  //           Get.toNamed('/onboarding-one');
+                  //         },
+                  //         style: ElevatedButton.styleFrom(
+                  //             primary: AppColors.appPrimaryColor,
+                  //             shape: const StadiumBorder()),
+                  //         child: Center(
+                  //           child: Padding(
+                  //             padding: const EdgeInsets.symmetric(vertical: 20),
+                  //             child: Text(
+                  //               "getStarted".tr,
+                  //               style: const TextStyle(fontSize: 18),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       )),
+                  // ),
                 ],
               )),
         ],

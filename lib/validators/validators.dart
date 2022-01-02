@@ -1,7 +1,7 @@
 class Validator {
   Validator._();
 
-  static bool usernameValidator(String value) {
+  static bool emptyValidator(String value) {
     return value.isNotEmpty;
   }
 }

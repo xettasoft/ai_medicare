@@ -18,7 +18,7 @@ class RegisterTab extends StatelessWidget {
           const Expanded(
               flex: 0,
               child: SizedBox(
-                height: 20,
+                height: 30,
               )),
           Expanded(
               flex: 0,

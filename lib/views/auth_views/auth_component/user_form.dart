@@ -19,11 +19,8 @@ class UserForm extends GetView<LoginController> {
       child: ListView(
         //mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
-            height: height * 0.00,
-          ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 0),
             child: Text(
               "$title".tr,
               style: TextStyle(fontSize: 30, color: Colors.grey.shade400),

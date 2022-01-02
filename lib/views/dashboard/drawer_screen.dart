@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:ai_medicare/providers/shared_preference_helper.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DrawerScreen extends StatelessWidget {
   @override
@@ -226,7 +228,10 @@ class DrawerScreen extends StatelessWidget {
                   child: SizedBox(
                     width: width,
                     child: ListTile(
-                      onTap: () {
+                      onTap: () async {
+                        await SharedPreferenceHelper(
+                                SharedPreferences.getInstance())
+                            .removeAuthUser();
                         Get.toNamed('/login');
                       },
                       leading: const Icon(Icons.logout),

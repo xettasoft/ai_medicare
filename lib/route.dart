@@ -2,6 +2,7 @@ import 'package:ai_medicare/bindings/home_binding.dart';
 import 'package:ai_medicare/bindings/login_binding.dart';
 import 'package:ai_medicare/bindings/medication_binding.dart';
 import 'package:ai_medicare/bindings/notification_binding.dart';
+import 'package:ai_medicare/bindings/onboarding_bindings.dart';
 import 'package:ai_medicare/bindings/register_binding.dart';
 import 'package:ai_medicare/bindings/setup_binding.dart';
 import 'package:ai_medicare/bindings/setup_wallet_binding.dart';
@@ -52,9 +53,9 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 makeRoute() {
   return [
     GetPage(
-      name: '/',
-      page: () => const Onboarding(),
-    ),
+        name: '/',
+        page: () => const Onboarding(),
+        binding: OnboardingBinding()),
     GetPage(
       name: '/onboarding-one',
       page: () => const OnboardingOne(),

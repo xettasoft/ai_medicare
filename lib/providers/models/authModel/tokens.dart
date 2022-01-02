@@ -11,4 +11,9 @@ class TokenModel {
         accessToken: json["accessToken"],
         refreshToken: json["refreshToken"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "accessToken": accessToken,
+        "refreshToken": refreshToken,
+      };
 }

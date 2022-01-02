@@ -113,9 +113,9 @@ class Home extends GetView<HomeController> {
         backgroundColor: Colors.black.withOpacity(0.3),
         context: context,
         isScrollControlled: true,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+        // shape: const RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.only(
+        //         topLeft: Radius.circular(20), topRight: Radius.circular(20))),
         builder: (BuildContext bc) {
           return const Center(
             child: SetupCard(),

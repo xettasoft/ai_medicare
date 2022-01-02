@@ -7,6 +7,8 @@ class ProviderConstant {
       "https://aimedicare-backend.herokuapp.com/api/v1";
   static const int timeOut = 15;
   static const String token = "token";
+  static const String user = "AuthUser";
+  static const String session = "Session";
 
   static dynamic errorHandler(Response response) {
     switch (response.statusCode) {

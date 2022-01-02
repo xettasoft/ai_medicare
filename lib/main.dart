@@ -16,6 +16,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.lazyPut<ThemeController>(() => ThemeController());
   ThemeController.to.getThemeModeFromPreferences();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
   runApp(GetMaterialApp(
     translations: Messages(),
     locale: const Locale('en', 'UK'),
