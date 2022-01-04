@@ -35,7 +35,7 @@ class LoginForm extends GetView<LoginController> {
                         : Colors.black26,
                     borderRadius: BorderRadius.circular(25)),
                 padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
                 child: Row(
                   children: [
                     Expanded(
@@ -63,7 +63,7 @@ class LoginForm extends GetView<LoginController> {
                         : Colors.black26,
                     borderRadius: BorderRadius.circular(25)),
                 padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
                 child: Row(
                   children: [
                     Expanded(
@@ -98,7 +98,7 @@ class LoginForm extends GetView<LoginController> {
               child: Text(
                 "forgotPassword".tr,
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 14,
                     color: Colors.grey.shade500,
                     decoration: TextDecoration.underline),
               ),

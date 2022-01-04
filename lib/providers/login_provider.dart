@@ -8,13 +8,13 @@ class LoginProvider extends BaseProvider {
     Response? res;
     try {
       res = await post("/users/login", request.toJson());
+      print(res.body["contact_info"]);
       if (res.statusCode == 200 || res.statusCode == 201) {
         return AuthModel.fromJson(res.body);
       }
       return AuthModel.withError(res.body);
     } catch (e) {
-      return AuthModel.withError(
-          {"message": "Error Encountered", "details": "error"});
+      return AuthModel.withError({"message": e, "details": "error"});
     }
   }
 }

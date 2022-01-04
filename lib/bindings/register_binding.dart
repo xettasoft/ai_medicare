@@ -6,6 +6,6 @@ class RegisterBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => RegisterProvider());
-    Get.put(RegisterController(authProvider: Get.find()));
+    Get.put(RegisterController(authProvider: Get.find(), prefs: Get.find()));
   }
 }

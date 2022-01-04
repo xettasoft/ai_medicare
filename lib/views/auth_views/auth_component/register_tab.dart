@@ -34,7 +34,7 @@ class RegisterTab extends StatelessWidget {
                 child: Text(
                   "createAccount".tr,
                   style: const TextStyle(
-                      fontSize: 30, fontWeight: FontWeight.bold),
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               )),
           const Expanded(

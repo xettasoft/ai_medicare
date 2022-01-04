@@ -4,7 +4,6 @@ import 'package:ai_medicare/views/auth_views/auth_component/login_button.dart';
 import 'package:ai_medicare/views/auth_views/auth_component/login_form.dart';
 import 'package:ai_medicare/views/shared/loading_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 
 class Login extends GetView<LoginController> {
@@ -16,22 +15,22 @@ class Login extends GetView<LoginController> {
         body: ListView(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Expanded(
-                flex: 0,
-                child: Obx(() {
-                  if (controller.loading.isTrue) {
-                    print(true);
-                    SchedulerBinding.instance
-                        ?.addPostFrameCallback((_) => _loading(context));
-                  }
+              // Expanded(
+              //   flex: 0,
+              //   child: Obx(() {
+              //     if (controller.loading.isTrue) {
+              //       print(true);
+              //       SchedulerBinding.instance
+              //           ?.addPostFrameCallback((_) => _loading(context));
+              //     }
 
-                  return const SizedBox.shrink();
-                }),
-              ),
+              //     return const SizedBox.shrink();
+              //   }),
+              // ),
               const SizedBox(
                 height: 50,
               ),
@@ -44,12 +43,12 @@ class Login extends GetView<LoginController> {
                     children: [
                       Text(
                         "hey".tr,
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 16),
                       ),
                       Text(
                         "welcome".tr,
                         style: const TextStyle(
-                            fontSize: 30,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.normal),
                       ),
@@ -61,9 +60,9 @@ class Login extends GetView<LoginController> {
               const SizedBox(
                 height: 50,
               ),
-              const Expanded(
+              Expanded(
                 flex: 0,
-                child: LoginButton(),
+                child: LoginButton(loader: _loading),
               ),
               const Expanded(
                 flex: 0,

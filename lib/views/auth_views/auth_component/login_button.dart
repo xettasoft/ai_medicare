@@ -6,7 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({Key? key}) : super(key: key);
+  const LoginButton({Key? key, this.loader}) : super(key: key);
+  final void Function(BuildContext)? loader;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class LoginButton extends StatelessWidget {
         onPressed: () async {
           FocusScope.of(context).requestFocus(FocusNode());
           if (controller.submitFunc.value != null) {
+            loader!(context);
             AuthModel result = await controller.submitFunc.value!();
             Get.back();
             if (result.success == true) {
@@ -33,7 +35,7 @@ class LoginButton extends StatelessWidget {
         },
         child: Center(
           child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,

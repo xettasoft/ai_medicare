@@ -14,6 +14,17 @@ class Register extends GetView<RegisterController> {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
+          // Expanded(
+          //   flex: 0,
+          //   child: Obx(() {
+          //     if (controller.loading) {
+          //       SchedulerBinding.instance
+          //           ?.addPostFrameCallback((_) => _loading(context));
+          //     }
+
+          //     return const SizedBox.shrink();
+          //   }),
+          // ),
           Expanded(
             child: Center(
               child: Padding(

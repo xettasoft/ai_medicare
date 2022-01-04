@@ -9,11 +9,11 @@ class ContactModel {
   final String? longitude;
 
   factory ContactModel.fromJson(Map<String, dynamic> json) => ContactModel(
-        country: json["country"],
-        city: json["city"],
-        street: json["street"],
-        latitude: json["latitude"],
-        longitude: json["longitude"],
+        country: json["country"] ?? "",
+        city: json["city"] ?? "",
+        street: json["street"] ?? "",
+        latitude: json["latitude"] ?? "",
+        longitude: json["longitude"] ?? "",
       );
 
   Map<String, String?> toJson() => {

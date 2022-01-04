@@ -71,6 +71,7 @@ class LoginController extends GetxController {
   Future<AuthModel> login() async {
     loading.value = true;
     _error.value = "";
+
     try {
       var request =
           LoginRquest(email: username.value, password: password.value);

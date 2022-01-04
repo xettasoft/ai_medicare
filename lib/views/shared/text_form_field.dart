@@ -5,11 +5,21 @@ import 'package:get/get_utils/src/extensions/internacionalization.dart';
 class ATextFormField extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
   const ATextFormField(
-      {this.hintText, this.labelText, this.obscureText, this.icon});
+      {this.hintText,
+      this.errorText,
+      this.labelText,
+      this.obscureText,
+      this.icon,
+      this.onTextChange,
+      this.onVisible});
   final String? hintText;
   final String? labelText;
+  final String? errorText;
   final bool? obscureText;
   final Icon? icon;
+  final void Function(String)? onTextChange;
+  final void Function()? onVisible;
+
   @override
   Widget build(BuildContext context) => Container(
       decoration: BoxDecoration(
@@ -17,7 +27,7 @@ class ATextFormField extends StatelessWidget {
               ? Colors.grey.shade200
               : Colors.black26,
           borderRadius: BorderRadius.circular(20)),
-      padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
       child: Row(
         children: [
           Expanded(
@@ -26,25 +36,18 @@ class ATextFormField extends StatelessWidget {
                     icon: icon ?? const Icon(Icons.input),
                     hintText: '$hintText'.tr,
                     labelText: '$labelText'.tr,
+                    errorText: errorText,
                     enabledBorder: InputBorder.none,
                     errorBorder: InputBorder.none,
                     disabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
-                    suffixIcon: obscureText == true
-                        ? IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.visibility))
-                        : null,
+                    // suffixIcon: obscureText == true
+                    //     ? IconButton(
+                    //         onPressed: onVisible,
+                    //         icon: const Icon(Icons.visibility))
+                    //     : null,
                   ),
-                  onSaved: (String? value) {
-                    // This optional block of code can be used to run
-                    // code when the user saves the form.
-                  },
-                  validator: (String? value) {
-                    return (value != null && value.contains('@'))
-                        ? 'Do not use the @ char.'
-                        : null;
-                  },
+                  onChanged: onTextChange,
                   obscureText: obscureText ?? false))
         ],
       ));

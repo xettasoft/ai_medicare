@@ -6,9 +6,9 @@ class HealthModel {
   final String? mass;
 
   factory HealthModel.fromJson(Map<String, dynamic> json) => HealthModel(
-        gender: json["gender"],
-        height: json["height"],
-        mass: json["mass"],
+        gender: json["gender"] ?? "",
+        height: json["height"] ?? "",
+        mass: json["mass"] ?? "",
       );
 
   Map<String, String?> toJson() => {
